@@ -38,7 +38,7 @@ class BirthdayCake
   end
 
   def greet
-    "Happy #{self.age.ordinalize} Birdday!"
+    "Happy #{self.age.ordinalize} Birthday!" # Revised string value "Birrdday" to "Birthday"
   end
 
   def sing
@@ -49,17 +49,25 @@ class BirthdayCake
     "Birthday cake with #{self.age} #{candles_status} candles"
   end
 
+  def light_candles # Added method
+    self.lit = true
+  end
+
+  def blow_out_candles # Added method
+    self.lit = false
+  end
+
   def BirthdayCake.celebrate(age)
-    birthday_cake = Birthdaycake.new(age)
+    birthday_cake = BirthdayCake.new(age)
     puts birthday_cake.greet
     puts birthday_cake.to_s
     puts "Lighting candles..."
     birthday_cake.light_candles
     puts birthday_cake.to_s
     puts "Singing happy birthday..."
-    puts birthday_cake.sign
+    puts birthday_cake.sing # Revised method name "sign to "sing"
     puts "Blowing out candles..."
-    birth_cake.blow_out_candles
+    birthday_cake.blow_out_candles # Revised variable name "birth_cake" to "birthday_cake"
     puts birthday_cake.to_s
 
     birthday_cake
